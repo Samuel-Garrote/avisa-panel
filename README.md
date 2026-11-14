@@ -1,30 +1,32 @@
-# Avisa — panel del comerciante (Angular)
+# Avisa — panel del comerciante (React + Nimbus)
 
 Panel integrado en el administrador de Tiendanube: resumen de avisos, mensaje y canales, y plan.
-Se conecta con el administrador mediante Nexo y llama al backend con el token de sesión de Nexo.
+
+- **React 18 + Vite**, con los componentes y plantillas de **Nimbus** (`@nimbus-ds/components`,
+  `@nimbus-ds/patterns`), el sistema de diseño del administrador que pide la homologación.
+- **Nexo** conecta el panel con el administrador: sincroniza las rutas, da el token de sesión con el que se
+  llama al backend y su `ErrorBoundary` reporta los errores.
 
 ## Desarrollo
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-Sirve el panel en `http://localhost:4200` y llama al backend en `http://localhost:8081`
-(`src/environments/environment.ts`). Abierto fuera del administrador muestra
-"Abre Avisa desde tu administrador": tiene que abrirse desde Aplicaciones en la tienda demo.
-
-En el panel de partners activa **Integrar en el administrador** con la URL `http://localhost:4200`.
+Sirve el panel en `http://localhost:4200` y llama al backend local `http://localhost:8081` (`.env.development`).
+Fuera del administrador muestra «Abre Avisa desde tu administrador»: hay que abrirlo desde Aplicaciones en la
+tienda demo, con «Integrar en el administrador» apuntando a `http://localhost:4200`.
 
 ## Producción
 
-1. Pon el dominio del backend en `src/environments/environment.prod.ts` (`apiUrl`).
-2. `npm run build` → sube `dist/avisa-panel/browser` a Netlify o Cloudflare Pages.
-   Cloudflare Pages sirve `index.html` en cualquier ruta del panel y `privacidad.html` / `terminos.html` en `/privacidad` y `/terminos`.
-3. En el backend, `PANEL_URL` = la URL del panel (CORS).
-4. En el panel de partners, cambia la URL de integración por la del panel publicado.
+```bash
+npm run build
+```
 
-## Estilos
+Sube la carpeta `dist` a Cloudflare Pages (proyecto `avisa-panel`, entorno Producción).
+Usa `.env.production`: API `https://avisa-api.saasifylabs.net` y el plan Pro como «próximamente»
+(`VITE_BILLING_ENABLED=false`) hasta activar Stripe con pagos reales.
 
-Nimbus (el sistema de diseño del administrador) solo tiene componentes React, así que el panel usa
-sus tokens (`@nimbus-ds/tokens`: colores, tipografía, espaciados, radios) en `src/styles.css`.
+Cloudflare Pages sirve `index.html` en cualquier ruta del panel, y `public/privacidad.html`, `terminos.html` y
+`soporte.html` en `/privacidad`, `/terminos` y `/soporte`.
