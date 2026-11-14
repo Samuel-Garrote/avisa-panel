@@ -20,7 +20,7 @@ En el panel de partners activa **Integrar en el administrador** con la URL `http
 
 1. Pon el dominio del backend en `src/environments/environment.prod.ts` (`apiUrl`).
 2. `npm run build` → sube `dist/avisa-panel/browser` a Netlify o Cloudflare Pages.
-   `public/_redirects` ya manda todas las rutas a `index.html`.
+   Cloudflare Pages sirve `index.html` en cualquier ruta del panel y `privacidad.html` / `terminos.html` en `/privacidad` y `/terminos`.
 3. En el backend, `PANEL_URL` = la URL del panel (CORS).
 4. En el panel de partners, cambia la URL de integración por la del panel publicado.
 

@@ -1,0 +1,80 @@
+/* Shared styles for the public legal pages (privacy and terms) */
+:root {
+  --text: #1f2933;
+  --text-low: #5b6875;
+  --link: #0050c3;
+  --border: #e3e7eb;
+  --background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e6e9ec;
+    --text-low: #9aa5b1;
+    --link: #7fb0ff;
+    --border: #2d3640;
+    --background: #12171c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Geist, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 16px 64px;
+}
+
+.app {
+  margin: 0 0 8px;
+  color: var(--text-low);
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.updated {
+  margin: 8px 0 32px;
+  color: var(--text-low);
+  font-size: 14px;
+}
+
+h2 {
+  margin: 32px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 1.25rem;
+}
+
+h3 {
+  margin: 16px 0 4px;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--link);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.back {
+  margin-top: 40px;
+  font-size: 14px;
+}
