@@ -1,0 +1,17 @@
+.preview {
+  margin: 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--shape-border-radius-2);
+  background: var(--color-light-neutral-surface);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.field-error {
+  font-size: var(--font-size-body-caption);
+  color: var(--color-light-danger-text-high);
+}
+
+.checkbox .hint {
+  display: block;
+}

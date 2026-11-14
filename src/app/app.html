@@ -1,0 +1,26 @@
+@switch (nexo.connected()) {
+  @case (true) {
+    <main class="page">
+      <header class="header">
+        <h1 class="title">Avisa</h1>
+        <nav class="tabs">
+          <a class="tab" routerLink="/dashboard" routerLinkActive="tab-active">Resumen</a>
+          <a class="tab" routerLink="/settings" routerLinkActive="tab-active">Mensaje y canales</a>
+          <a class="tab" routerLink="/billing" routerLinkActive="tab-active">Plan</a>
+        </nav>
+      </header>
+      <router-outlet />
+    </main>
+  }
+  @case (false) {
+    <main class="page">
+      <div class="card">
+        <h2 class="card-title">Abre Avisa desde tu administrador</h2>
+        <p class="text-low">Este panel funciona dentro del administrador de Tiendanube, en la sección Aplicaciones.</p>
+      </div>
+    </main>
+  }
+  @default {
+    <main class="page"><p class="text-low">Cargando...</p></main>
+  }
+}

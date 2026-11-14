@@ -1,0 +1,32 @@
+.plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+}
+
+.badge {
+  padding: var(--spacing-0-5, 2px) var(--spacing-2);
+  border-radius: var(--shape-border-radius-full);
+  background: var(--color-light-success-surface);
+  color: var(--color-light-success-text-high);
+  font-size: var(--font-size-body-caption);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-warning {
+  background: var(--color-light-danger-surface);
+  color: var(--color-light-danger-text-high);
+}
+
+.usage-bar {
+  height: 8px;
+  border-radius: var(--shape-border-radius-full);
+  background: var(--color-light-neutral-surface-highlight);
+  overflow: hidden;
+}
+
+.usage-fill {
+  height: 100%;
+  background: var(--color-light-primary-interactive);
+}
